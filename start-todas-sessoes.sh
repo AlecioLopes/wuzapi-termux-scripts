@@ -21,23 +21,23 @@ termux-setup-storage
 
 export GO111MODULE=on
 
-# Executar sessões em background
-echo "🔄 Iniciando Sessão 7774 em background..."
-./start-sessao7774.sh &
+echo "🔨 Compilando ambas as sessões..."
+./start-sessao7774.sh compile
+./start-sessao7775.sh compile
 
-echo "🔄 Iniciando Sessão 7775 em background..."
-./start-sessao7775.sh &
-
-echo "⏳ Aguardando 20 segundos para inicialização completa..."
-sleep 20
-
-echo "🎉 CONFIGURAÇÃO FINALIZADA!"
-echo "📱 Sessão 1: http://localhost:8080 (Token: 7774)"
-echo "📱 Sessão 2: http://localhost:8081 (Token: 7775)"
-echo "📊 Ver logs: tail -f ~/wuzapi7774/wuzapi7774.log"
+echo ""
+echo "🎯 CONFIGURAÇÃO COMPLETA!"
+echo ""
+echo "📋 PRÓXIMOS PASSOS:"
+echo "1. Abra uma NOVA sessão do Termux"
+echo "2. Execute: cd wuzapi-termux-scripts && ./start-sessao7774.sh"
+echo "3. Abra OUTRA sessão do Termux" 
+echo "4. Execute: cd wuzapi-termux-scripts && ./start-sessao7775.sh"
+echo ""
+echo "📱 URLs:"
+echo "Sessão 1: http://localhost:8080 (Token: 7774)"
+echo "Sessão 2: http://localhost:8081 (Token: 7775)"
+echo ""
 echo "🛑 Parar tudo: ./parar-tudo.sh"
-echo "📋 Ver status: ./status-sessoes.sh"
 
-# Finalizar script principal
-echo "✅ Script principal finalizado. Sessões rodando em background."
 exit 0
